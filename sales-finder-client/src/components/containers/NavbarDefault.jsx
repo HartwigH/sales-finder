@@ -2,7 +2,7 @@ import React from 'react';
 
 
 /**stateful component */
-export default class Navbar extends React.Component {
+export default class NavbarDefault extends React.Component {
 
     constructor(props) {
         super(props);
@@ -27,13 +27,10 @@ export default class Navbar extends React.Component {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link disabled" href="#">
-                                    Wishlist <span className="badge badge-primary badge-danger">1</span></a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled" href="#"> Settings <img src="media/settings.png" width="20" height="20" className="d-inline-block align-middle" alt="" /></a>
+                                    Login </a>
                             </li>
                         </ul>
-                        <button className="btn btn-outline-danger" type="button"> Logout <img src="media/logout.png" width="20" height="20" className="d-inline-block align-middle" alt="" /></button>
+                        <button className="btn btn-outline-success" type="button"> Signup</button>
                     </div>
                 </div>
             </nav>

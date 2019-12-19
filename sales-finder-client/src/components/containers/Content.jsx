@@ -17,13 +17,13 @@ export default class Content extends React.Component {
           <div className="col">
             <ul className="nav nav-pills p-3">
               <li className="nav-item">
-                <a className="nav-link active bg-danger " href="#"><img src="media/hot.png" width="20" height="20" className="d-inline-block align-middle" alt=""/> Hot</a>
+                <a className="nav-link active bg-danger " href="#"> Hot <img src="media/hot.png" width="20" height="20" className="d-inline-block align-middle" alt=""/></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link " href="#">New</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" href="#">Others are watching</a>
+                <a className="nav-link disabled" href="#">Popular</a>
               </li>
             </ul>
           </div>
@@ -100,6 +100,8 @@ export default class Content extends React.Component {
 
 
       </div>
+
+      
         );
     }
 }

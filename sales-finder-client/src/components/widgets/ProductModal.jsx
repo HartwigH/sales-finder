@@ -42,7 +42,7 @@ export default class ProductModal extends React.Component {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">To store</button>
+                            <button type="button" className="btn btn-primary">Add to wishlist +</button>
                         </div>
                     </div>
                 </div>
