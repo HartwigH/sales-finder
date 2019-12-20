@@ -21,7 +21,7 @@ function ShowLogin(props) {
 }
 
 function ShowSignUp(props) {
-    
+
 }
 
 /**stateful component */
@@ -35,24 +35,22 @@ export default class MasterLayout extends React.Component{
     render() {
         const isLoggedIn = this.state.isLoggedIn;
 
-        if (this.state.token){
-            return <div className="container">
+            return <div className="container" id="mainContainer">
             <ShowNavbar isLoggedIn={isLoggedIn} />
             <div className="row">
+                {/*
+                <InnerMenu/>
+                <Content/>
+                 
+                <Login />
+                <SignUp />
+                */}
                 <InnerMenu/>
                 <Content/>
             </div>
             <Footer/>
             </div>;
-          }else{
-            return <div className="container">
-            <ShowNavbar isLoggedIn={isLoggedIn} />
-            <div className="row">
-                <SignUp/>
-            </div>
-            <Footer/>
-            </div>;
-          }
+
             
 
     }

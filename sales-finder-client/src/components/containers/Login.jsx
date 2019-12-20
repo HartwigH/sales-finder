@@ -18,7 +18,7 @@ export default class Login extends React.Component {
 
               </div>
               <div className="card-body">
-                <h5 className="card-title text-center">Login</h5>
+                <h5 className="card-title text-center">Sign in</h5>
                 <form className="form-signin" >
                   <div className="form-label-group">
                     <input type="text" id="inputUserame"  className="form-control" placeholder="Username" required autoFocus />
@@ -32,10 +32,11 @@ export default class Login extends React.Component {
 
                   <hr />
 
-                  <button className="btn btn-lg btn-outline-primary btn-block text-uppercase">Login</button>
+                  <button className="btn btn-lg btn-outline-primary btn-block text-uppercase">Sign in</button>
+                  <a className="d-block text-center mt-2 small" href="#">Register</a>
                   <hr className="my-4" />
-                  <button className="btn btn-lg btn-google btn-block text-uppercase" type="submit"> Sign up with Google</button>
-                  <button className="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"> Sign up with Facebook</button>
+                  <button className="btn btn-lg btn-google btn-block text-uppercase" type="submit"> Sign in with Google</button>
+                  <button className="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"> Sign in with Facebook</button>
                 </form>
               </div>
             </div>

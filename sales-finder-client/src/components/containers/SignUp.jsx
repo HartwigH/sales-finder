@@ -5,16 +5,16 @@ let httpsProxyAgent = require('https-proxy-agent');
 
 const agent = new httpsProxyAgent('http://kn.proxy.int.kn:80');
 
-const mockDataUrl = "https://api.mockaroo.com/api/cc68f950?count=3&key=b716fe20";
-const echoPostUrl="https://postman-echo.com/post";
+const mockDataUrl = "MOCK_DATA.json";
+const echoPostUrl="http://localhost:7000/signup";
 
 const config = {
   httpsAgent: agent
 }
 
 const configSend = {
-  headers: {"Content-Type": "application/json","Accept": "application/json", 'Access-Control-Allow-Origin': '*' },
-  httpsAgent: agent
+  headers: {"Content-Type": "application/json","Accept": "application/json" },
+  
 };
 
 /**stateful component */
@@ -39,7 +39,7 @@ export default class SignUp extends React.Component {
         //this.setState({ value: response[1]});
         this.setState({ username: response.data[0].username });
         this.setState({ email: response.data[0].email });
-        //console.log(response.data[0].username);
+        console.log(response.data);
       }).catch((exception) => {
         console.log(exception);
       });
@@ -59,7 +59,7 @@ export default class SignUp extends React.Component {
       axios.post(echoPostUrl, data, configSend)
       .then((response) => {
           console.log("response from echo server");
-          console.log(response.data);
+          console.log(response);
       }).catch((exception)=>{
           console.log(exception);
       });

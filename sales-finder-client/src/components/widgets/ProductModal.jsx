@@ -10,7 +10,7 @@ export default class ProductModal extends React.Component {
 
     render() {
         return (
-            <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+            <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style={{display: "none"}}>
                 <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -29,7 +29,7 @@ export default class ProductModal extends React.Component {
                                         <i className="fas fa-chart-area"></i>
                                         product price over time</div>
                                     <div className="card-body"><div className="chartjs-size-monitor"><div className="chartjs-size-monitor-expand"><div className=""></div></div><div className="chartjs-size-monitor-shrink"><div className=""></div></div></div>
-                                        <canvas id="myAreaChart" width="527" height="158" style="display: block; width: 527px; height: 158px;" className="chartjs-render-monitor"></canvas>
+                                        <canvas id="myAreaChart" width="527" height="158" style={{display: "block", width: "527px", height: "158px"}} className="chartjs-render-monitor"></canvas>
                                     </div>
                                     <div className="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 

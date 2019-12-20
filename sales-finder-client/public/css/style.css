@@ -5,6 +5,52 @@
  */
 body {
   padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+@media only screen and (max-width: 575px) {
+  body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .navbar-text {
+    display: none;
+  }
+  
+  .pto-text{
+    font-size: 0;
+  }
+
+  #dropdownMenuButton span {
+    display: none;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .collapse.dont-collapse-sm {
+    display: block;
+    height: auto !important;
+    visibility: visible;
+  }
+}
+
+#product-table {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.card-img-left {
+  margin-left: 32px;
+}
+
+
+#mainContainer {
+  border: 0;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 0;
 }
 
 
@@ -18,9 +64,9 @@ a.page-link {
 
 .card-signin {
   border: 0;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+
 }
+
 
 .card-signin .card-title {
   margin-bottom: 2rem;
