@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link, Route, Switch } from 'react-router-dom';
 
 /**stateful component */
 export default class InnerMenu extends React.Component {
@@ -13,20 +13,20 @@ export default class InnerMenu extends React.Component {
             <div className="col-lg-3">
 
                 <h5 className="my-4 text-center" data-toggle="collapse" data-target="#stores" aria-expanded="false" aria-controls="stores">                     
-                    <a data-toggle = "collapse" href = "#stores">Deals by store <img src="media/menu.png" width="20" height="20" className="d-inline-block align-middle" alt="" /></a>
+                    Deals by store
                 </h5>
 
-                <ul id="stores" className="list-group list-group-flush collapse dont-collapse-sm">
+                <ul id="stores" className="list-group list-group-flush">
 
                     <li className="list-group-item d-flex justify-content-between align-items-center">
-                        <a href="#">All</a>
+                        <Link to="/deals/all">All</Link>
                         <span className="badge badge-primary badge-danger">14</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
-                        <a href="#">Monton</a>
+                        <Link to="/deals/monton">Monton</Link>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
-                        <a href="#">Mosaic</a>
+                        <Link to="/deals/mosaic">Mosaic</Link>
                         <span className="badge badge-primary badge-danger">1</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
