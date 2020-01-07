@@ -13,7 +13,7 @@ export default class NavbarDefault extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
                     <Link className="navbar-brand" to="/">Sales Finder    
-                        <img src="media/logo.png" width="30" height="30" className="d-inline-block align-middle" alt="" />
+                        <img src="/media/logo.png" width="30" height="30" className="d-inline-block align-middle" alt="" />
                     </Link> 
                     <span className="navbar-text"><i>/ consume smart /</i></span>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">

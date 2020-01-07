@@ -205,3 +205,21 @@ a.page-link {
   margin-bottom: 10px;
 }
 
+.fas {
+  color: #222 !important;
+}
+
+.inner-menu {
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1) inset;
+    -wekbit-box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1) inset;
+
+}
+
+.inner-menu-style {
+
+}
+
+#product-img {
+  height: 150px;
+}

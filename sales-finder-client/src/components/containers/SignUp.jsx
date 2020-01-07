@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 
 const axios = require("axios"); //external library  https://github.com/axios/axios
 let httpsProxyAgent = require('https-proxy-agent');
 
 const agent = new httpsProxyAgent('http://kn.proxy.int.kn:80');
 
-const mockDataUrl = "MOCK_DATA.json";
+const mockDataUrl = "../MOCK_DATA.json";
 const echoPostUrl="http://localhost:7000/signup";
 
 const config = {
@@ -101,11 +102,11 @@ export default class SignUp extends React.Component {
                     <label htmlFor="inputConfirmPassword">Confirm password</label>
                   </div>
 
-                  <button className="btn btn-lg btn-outline-primary btn-block text-uppercase" onClick={this.sendData}>Register</button>
-                  <a className="d-block text-center mt-2 small" href="#">Sign In</a>
+                  <button className="btn btn-lg btn-outline-primary btn-block text-uppercase" type="submit" onClick={this.sendData}>Register</button>
+                  <Link className="d-block text-center mt-2 small" to="/sign-in">Sign In</Link>
                   <hr className="my-4" />
-                  <button className="btn btn-lg btn-google btn-block text-uppercase" type="submit"> Sign up with Google</button>
-                  <button className="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"> Sign up with Facebook</button>
+                  <button className="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"/> Sign up with Google</button>
+                  <button className="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"/> Sign up with Facebook</button>
                 </form>
               </div>
             </div>

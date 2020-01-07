@@ -18,7 +18,7 @@ export default class ContentMonton extends React.Component {
           <div className="col">
             <ul className="nav nav-pills p-3">
               <li className="nav-item">
-                <a className="nav-link active bg-danger " href="#"> Hot <img src="media/hot.png" width="20" height="20" className="d-inline-block align-middle" alt=""/></a>
+                <a className="nav-link active bg-danger " href="#"> Hot <img src="../media/hot.png" width="20" height="20" className="d-inline-block align-middle" alt=""/></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link " href="#">New</a>

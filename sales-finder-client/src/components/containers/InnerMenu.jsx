@@ -10,8 +10,8 @@ export default class InnerMenu extends React.Component {
 
     render() {
         return (
-            <div className="col-lg-3">
-
+            <div className="col-lg-3 inner-menu">
+                <div className="inner-menu-style">
                 <h5 className="my-4 text-center" data-toggle="collapse" data-target="#stores" aria-expanded="false" aria-controls="stores">                     
                     Deals by store
                 </h5>
@@ -37,7 +37,7 @@ export default class InnerMenu extends React.Component {
                         <span className="badge badge-primary badge-danger">1</span>
                     </li>
                 </ul>
-                
+                </div>
             </div>
         );
     }
