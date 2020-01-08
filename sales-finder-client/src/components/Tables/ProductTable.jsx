@@ -17,6 +17,27 @@ import './ProductTable.css';
 
 const { SearchBar } = Search;
 
+const TableSearchBar = (props) => {
+  let input;
+  const handleChange = () => {
+    props.onSearch(input.value); //eslint-disable-line
+  };
+  return (
+    <div className="form-label-group">
+      <span class="fa fa-search form-control-feedback"></span>
+      <input
+          id="table-search-bar"
+          className="form-control form-control-sm"
+        ref={n => input = n} //eslint-disable-line
+          type="text"
+          placeholder="Search..."
+          onChange={handleChange}
+        />
+      <label htmlFor="table-search-bar">Search...</label>
+      
+    </div>
+  );
+};
 
 const imageFormatter = (cell, row) => {
   let imgUrl = React.createElement('img',  {
@@ -36,7 +57,7 @@ const productDetails = (e)=> {
 const formatProductDetailsButtonCell =(cell, row)=>{  
     let clickHandler=productDetails;
     var emptyContent = React.createElement('i',{id:row.id,onClick:clickHandler});			
-    var aBtn = React.createElement('a',{id:row.id,className:"fas fa-cart-plus fa-lg text-primary", onClick:clickHandler}, emptyContent);
+    var aBtn = React.createElement('a',{id:row.id,className:"fas fa-cart-plus fa-lg text-success", onClick:clickHandler}, emptyContent);
     return aBtn;	
 }
 
@@ -49,9 +70,9 @@ const columns = [{
     text: 'Name',
     sort: true,
     sortCaret: (order, column) => {
-        if (!order) return (<span>&nbsp;&nbsp;<i class="fas fa-sort"></i></span>);
-        else if (order === 'asc') return (<span>&nbsp;&nbsp;<i class="fas fa-sort-alpha-up"></i></span>);
-        else if (order === 'desc') return (<span>&nbsp;&nbsp;<i class="fas fa-sort-alpha-down-alt"></i></span>);
+        if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
+        else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-up"></i></span>);
+        else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-down-alt"></i></span>);
         return null;
     }  
 }, {
@@ -59,9 +80,9 @@ const columns = [{
   text: 'Price',
   sort: true,
   sortCaret: (order, column) => {
-      if (!order) return (<span>&nbsp;&nbsp;<i class="fas fa-sort"></i></span>);
-      else if (order === 'asc') return (<span>&nbsp;&nbsp;<i class="fas fa-sort-numeric-up"></i></span>);
-      else if (order === 'desc') return (<span>&nbsp;&nbsp;<i class="fas fa-sort-numeric-down-alt"></i></span>);
+      if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
+      else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up"></i></span>);
+      else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down-alt"></i></span>);
       return null;
   } 
 }, {
@@ -69,9 +90,9 @@ const columns = [{
     text: 'Save',
     sort: true,
     sortCaret: (order, column) => {
-        if (!order) return (<span>&nbsp;&nbsp;<i class="fas fa-sort"></i></span>);
-        else if (order === 'asc') return (<span>&nbsp;&nbsp;<i class="fas fa-sort-numeric-down"></i></span>);
-        else if (order === 'desc') return (<span>&nbsp;&nbsp;<i class="fas fa-sort-numeric-up-alt"></i></span>);
+        if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
+        else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down"></i></span>);
+        else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up-alt"></i></span>);
         return null;
     } 
 }, {
@@ -144,9 +165,9 @@ export default class Content extends React.Component {
                     <div className="row">     
                         <div className="col-sm-8">
                         </div>             
-                        <div className="col-sm-4">
-                        <div className="product-search">
-                          <SearchBar { ...toolkitprops.searchProps } />
+                        <div className="col-sm-4">                          
+                        <div className="product-search">                        
+                          <TableSearchBar { ...toolkitprops.searchProps } />                          
                           </div>                                        
                         </div>
                     </div>                                  

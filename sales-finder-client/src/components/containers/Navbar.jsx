@@ -12,7 +12,7 @@ export default class Navbar extends React.Component {
         return (
             <nav className="navbar  navbar-expand-lg navbar-light bg-light">
                 <div className="container">
-                    <a className="navbar-brand" href="#"> <img src="media/logo.png" width="30" height="30" className="d-inline-block align-middle" alt="" />
+                    <a className="navbar-brand" href="#"> <img src="/media/logo.png" width="30" height="30" className="d-inline-block align-middle" alt="" />
                         Sales Finder</a>
                     <span className="navbar-text"><i>/ consume smart /</i></span>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,14 +26,14 @@ export default class Navbar extends React.Component {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link disabled" href="#">
+                                <a className="nav-link" href="#">
                                     Wishlist <span className="badge badge-primary badge-danger">1</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link disabled" href="#"> Settings <img src="media/settings.png" width="20" height="20" className="d-inline-block align-middle" alt="" /></a>
+                                <a className="nav-link" href="#">Settings</a>
                             </li>
                         </ul>
-                        <button className="btn btn-outline-danger" type="button"> Logout <img src="media/logout.png" width="20" height="20" className="d-inline-block align-middle" alt="" /></button>
+                        <button className="btn btn-outline-primary" type="button"> Logout <i class="fas fa-sign-out-alt"></i></button>
                     </div>
                 </div>
             </nav>

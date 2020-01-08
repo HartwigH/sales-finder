@@ -21,7 +21,10 @@
 .product-search {
     padding-right: 16px;
     padding-left: 16px;
+    position: relative;   
 }
+
+
 
 @media only screen and (max-width: 575px) {
     .product-table {
@@ -40,5 +43,31 @@
   }
 
 .table > thead {
-    background-color: #dc35451a;
+    /*background-color: #17a2b8;
+    color: white;*/
+}
+
+.table > thead > tr > th {
+    border: none;
+    font-weight: 300;
+}
+
+.sort-caret {
+    color: black;
+    
+}
+.product-search > .form-label-group {
+    margin-bottom: 0;
+}
+
+.form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 1.5rem;
+    height: 2.375rem;
+    line-height: 3.2rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }

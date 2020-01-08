@@ -6,6 +6,7 @@
 body {
   padding-top: 56px;
   padding-bottom: 56px;
+  
 }
 
 @media only screen and (max-width: 575px) {
@@ -30,6 +31,15 @@ body {
     height: 75px !important;
   }
 
+
+  #hero-area {
+    padding: 20px 0 80px !important;
+
+  }
+
+  .hero-area-text {
+    margin-right: 16px !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -204,15 +214,15 @@ a.page-link {
 
 #hero-area .contents .head-title {
   color: #222;
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 3em;
   line-height: 60px;
   margin-bottom: 10px;
 }
 
-.fas {
-  color: #222 !important;
+.thin-font {
+  font-weight: 300;
 }
+
 
 .inner-menu {
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1) inset;

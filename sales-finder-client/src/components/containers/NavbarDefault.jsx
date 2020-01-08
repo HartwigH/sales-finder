@@ -25,10 +25,11 @@ export default class NavbarDefault extends React.Component {
                                 <Link className="nav-link" to="/deals/all">Deals</Link>                                
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/sign-in">Sign In</Link>
+                            <Link className="nav-link" to="/register">Register </Link>
+                                
                             </li>
                         </ul>
-                        <Link className="btn btn-outline-primary" to="/register">Register</Link>
+                        <Link className="btn btn-outline-primary" to="/sign-in">Sign In <i class="fas fa-sign-in-alt"></i></Link>
                     </div>
                 </div>
             </nav>
