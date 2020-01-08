@@ -26,6 +26,10 @@ body {
     display: none;
   }
 
+  #product-img {
+    height: 75px !important;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -34,6 +38,7 @@ body {
     height: auto !important;
     visibility: visible;
   }
+  
 }
 
 #product-table {
@@ -216,9 +221,6 @@ a.page-link {
 
 }
 
-.inner-menu-style {
-
-}
 
 #product-img {
   height: 150px;

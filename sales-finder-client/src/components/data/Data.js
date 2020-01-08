@@ -1,74 +1,38 @@
-export const data = [
-    {
-        "id": 1,
-        "product": "Beef - Kobe Striploin",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839",
-        "price": "$8.27"
-    },
-    {
-        "id": 2,
-        "product": "Mangoes",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95131_263189",
-        "price": "$9.88"
-    },
-    {
-        "id": 3,
-        "product": "Asparagus - Mexican",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95128_262808",
-        "price": "$7.99"
-    },
-    {
-        "id": 4,
-        "product": "Spring Roll Veg Mini",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/4/94800",
-        "price": "$7.62"
-    },
-    {
-        "id": 5,
-        "product": "Beef - Kobe Striploin",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839",
-        "price": "$8.27"
-    },
-    {
-        "id": 6,
-        "product": "Mangoes",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95131_263189",
-        "price": "$9.88"
-    },
-    {
-        "id": 7,
-        "product": "Asparagus - Mexican",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95128_262808",
-        "price": "$7.99"
-    },
-    {
-        "id": 8,
-        "product": "Spring Roll Veg Mini",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/4/94800",
-        "price": "$7.62"
-    },
-    {
-        "id": 9,
-        "product": "Beef - Kobe Striploin",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839",
-        "price": "$8.27"
-    },
-    {
-        "id": 10,
-        "product": "Mangoes",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95131_263189",
-        "price": "$9.88"
-    },
-    {
-        "id": 11,
-        "product": "Asparagus - Mexican",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95128_262808",
-        "price": "$7.99"
-    },
-    {
-        "id": 12,
-        "product": "Spring Roll Veg Mini",
-        "image": "https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/4/94800",
-        "price": "$7.62"
-    }
-]
+export const data=[{"id":1,"product":"Kids","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€26,82","precentage":30},
+{"id":2,"product":"Books","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€44,20","precentage":33},
+{"id":3,"product":"Health","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€38,00","precentage":6},
+{"id":4,"product":"Outdoors","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€38,59","precentage":35},
+{"id":5,"product":"Sports","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€21,32","precentage":24},
+{"id":6,"product":"Shoes","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€13,02","precentage":13},
+{"id":7,"product":"Garden","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€35,75","precentage":24},
+{"id":8,"product":"Jewelery","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€36,30","precentage":21},
+{"id":9,"product":"Grocery","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€33,02","precentage":30},
+{"id":10,"product":"Books","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€36,10","precentage":26},
+{"id":11,"product":"Toys","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€28,72","precentage":22},
+{"id":12,"product":"Kids","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€42,41","precentage":29},
+{"id":13,"product":"Electronics","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€32,01","precentage":27},
+{"id":14,"product":"Automotive","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€39,96","precentage":10},
+{"id":15,"product":"Electronics","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€13,38","precentage":25},
+{"id":16,"product":"Games","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€13,76","precentage":13},
+{"id":17,"product":"Sports","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€26,27","precentage":16},
+{"id":18,"product":"Jewelery","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€22,06","precentage":19},
+{"id":19,"product":"Kids","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€16,99","precentage":29},
+{"id":20,"product":"Grocery","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€23,79","precentage":34},
+{"id":21,"product":"Books","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€34,63","precentage":18},
+{"id":22,"product":"Electronics","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€41,39","precentage":11},
+{"id":23,"product":"Games","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€32,18","precentage":27},
+{"id":24,"product":"Industrial","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€17,02","precentage":13},
+{"id":25,"product":"Sports","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€24,50","precentage":11},
+{"id":26,"product":"Kids","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€37,56","precentage":19},
+{"id":27,"product":"Automotive","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€11,09","precentage":21},
+{"id":28,"product":"Automotive","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€19,83","precentage":30},
+{"id":29,"product":"Home","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€16,91","precentage":21},
+{"id":30,"product":"Electronics","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€40,55","precentage":7},
+{"id":31,"product":"Home","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€10,03","precentage":5},
+{"id":32,"product":"Health","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€28,38","precentage":11},
+{"id":33,"product":"Automotive","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€16,85","precentage":28},
+{"id":34,"product":"Electronics","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€40,34","precentage":8},
+{"id":35,"product":"Movies","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€33,15","precentage":21},
+{"id":36,"product":"Electronics","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€43,72","precentage":37},
+{"id":37,"product":"Garden","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€30,36","precentage":23},
+{"id":38,"product":"Tools","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95129_262839","price":"€10,09","precentage":29}]

@@ -10,7 +10,7 @@ export default class Navbar extends React.Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar  navbar-expand-lg navbar-light bg-light">
                 <div className="container">
                     <a className="navbar-brand" href="#"> <img src="media/logo.png" width="30" height="30" className="d-inline-block align-middle" alt="" />
                         Sales Finder</a>

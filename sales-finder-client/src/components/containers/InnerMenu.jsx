@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
-
+import './InnerMenu.css';
 /**stateful component */
 export default class InnerMenu extends React.Component {
 
