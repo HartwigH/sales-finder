@@ -1,0 +1,12 @@
+export const dataMonton=[{"id":1,"product":"Slim-fit cotton mix blazer","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/4/94821","price":"€26,82","precentage":30},
+{"id":2,"product":"Regular-fit waistcoat","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/4/94830","price":"€44,20","precentage":33},
+{"id":3,"product":"Extra slim-fit shirt","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/9/89044_261426","price":"€38,00","precentage":6},
+{"id":4,"product":"Slim-fit shirt","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/3/93472_263177","price":"€38,59","precentage":35},
+{"id":5,"product":"O-neck top","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95667","price":"€21,32","precentage":24},
+{"id":6,"product":"Hooded top","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95626","price":"€13,02","precentage":13},
+{"id":7,"product":"O-neck top","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/4/94833","price":"€35,75","precentage":24},
+{"id":8,"product":"Slim-fit jeans","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/3/83236","price":"€36,30","precentage":21},
+{"id":9,"product":"O-neck light jersey","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/4/94725","price":"€33,02","precentage":30},
+{"id":10,"product":"Regular-fit shirt","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/6/86400_261439","price":"€36,10","precentage":26},
+{"id":11,"product":"Slim-fit shirt","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/3/93861","price":"€28,72","precentage":22},
+{"id":12,"product":"Regular-fit shirt","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/3/93756","price":"€42,41","precentage":29}]

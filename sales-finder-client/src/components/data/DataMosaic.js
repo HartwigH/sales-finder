@@ -1,0 +1,8 @@
+export const dataMosaic=[
+{"id":13,"product":"Overjacket","url":"https://mosaic.andmorefashion.com/media/catalog/product/cache/6/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/5/85857","price":"€32,01","precentage":27},
+{"id":14,"product":"Down coat","url":"https://mosaic.andmorefashion.com/media/catalog/product/cache/6/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/8/88232","price":"€39,96","precentage":10},
+{"id":15,"product":"Slim-fit suit blazer","url":"https://mosaic.andmorefashion.com/media/catalog/product/cache/6/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/8/88246","price":"€13,38","precentage":25},
+{"id":16,"product":"Slim-fit suit blazer","url":"https://mosaic.andmorefashion.com/media/catalog/product/cache/6/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/3/83886","price":"€13,76","precentage":13},
+{"id":17,"product":"Regular-fit shirt","url":"https://mosaic.andmorefashion.com/media/catalog/product/cache/6/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/9/89595_262147","price":"€26,27","precentage":16},
+{"id":18,"product":"Regular-fit shirt","url":"https://mosaic.andmorefashion.com/media/catalog/product/cache/6/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/0/90498_262146","price":"€22,06","precentage":19},
+{"id":19,"product":"Regular-fit blazer","url":"https://mosaic.andmorefashion.com/media/catalog/product/cache/6/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/8/88230","price":"€16,99","precentage":29}]

@@ -1,0 +1,4 @@
+export const dataWishlist=[{"id":3,"product":"Extra slim-fit shirt","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/8/9/89044_261426","price":"€38,00","precentage":6},
+{"id":4,"product":"Slim-fit shirt","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/3/93472_263177","price":"€38,59","precentage":35},
+{"id":5,"product":"O-neck top","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95667","price":"€21,32","precentage":24},
+{"id":6,"product":"Hooded top","url":"https://monton.andmorefashion.com/media/catalog/product/cache/1/image/288x355/17f82f742ffe127f42dca9de82fb58b1/9/5/95626","price":"€13,02","precentage":13}]

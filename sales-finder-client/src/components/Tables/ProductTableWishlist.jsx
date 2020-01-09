@@ -8,10 +8,7 @@ import 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.c
 
 import paginationFactory, { PaginationProvider, PaginationListStandalone, SizePerPageDropdownStandalone } from 'react-bootstrap-table2-paginator';
 
-
-//import {data} from '../data/Data.js';
-
-import './ProductTable.css';
+import './ProductTableWishlist.css';
 
 const { SearchBar } = Search;
 
@@ -38,6 +35,7 @@ const TableSearchBar = (props) => {
   );
 };
 
+
 // handle url
 const imageFormatter = (cell, row) => {
   let imgUrl = React.createElement('img', {
@@ -57,12 +55,13 @@ const productDetails = (e) => {
 const formatProductDetailsButtonCell = (cell, row) => {
   let clickHandler = productDetails;
   var emptyContent = React.createElement('i', { id: row.id, onClick: clickHandler });
-  var addBtn = React.createElement('a', { id: row.id, className: "fas fa-cart-plus fa-lg text-success action-style", onClick: clickHandler }, emptyContent);
+  var addBtn = React.createElement('a', { id: row.id, className: "fas fa-minus-circle fa-lg text-danger action-style", onClick: clickHandler }, emptyContent);
   var logBtn = React.createElement('a', { id: row.id, className: "fas fa-search-dollar fa-lg text-info action-style", onClick: clickHandler }, emptyContent);
   var goBtn = React.createElement('a', { id: row.id, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickHandler }, emptyContent);
   const container = React.createElement('div', {}, [addBtn, logBtn, goBtn]);
   return container;
 }
+
 
 const columns = [{
   dataField: 'url',
@@ -143,15 +142,21 @@ const pageButtonRenderer = ({
 const paginationConfig = {
   custom: true,
   pageButtonRenderer
+
+  // A numeric array is also available. the purpose of above example is custom the text
 };
 
 
+
 /**stateful component */
-export default class ProductTable extends React.Component {
+export default class ProductTableWishlist extends React.Component {
 
   constructor(props) {
     super(props);
+
   }
+
+
 
   render() {
     const data = this.props.data;
@@ -159,6 +164,7 @@ export default class ProductTable extends React.Component {
 
       return (
         <div>
+
           <ToolkitProvider
             keyField="id"
             columns={columns}
@@ -170,16 +176,7 @@ export default class ProductTable extends React.Component {
 
                 return (
                   <div>
-                    <div className="row">
-                      <div className="col-sm-8">
-                      </div>
-                      <div className="col-sm-4">
-                        <div className="product-search">
-                          <TableSearchBar {...toolkitprops.searchProps} />
-                        </div>
-                      </div>
-                    </div>
-                    <br />
+
 
                     <BootstrapTable
                       {...toolkitprops.baseProps}
@@ -188,6 +185,8 @@ export default class ProductTable extends React.Component {
                     />
 
                   </div>);
+
+
               }
             }
           </ToolkitProvider>
@@ -200,7 +199,7 @@ export default class ProductTable extends React.Component {
 
     return (
 
-      <div className="product-table">
+      <div className="product-table-wishlist">
         <PaginationProvider pagination={paginationFactory(paginationConfig)} >
           {contentTable}
         </PaginationProvider >

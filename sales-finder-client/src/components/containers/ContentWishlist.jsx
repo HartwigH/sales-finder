@@ -1,14 +1,13 @@
 import React from 'react';
 
-import ProductTable from '../Tables/ProductTable.jsx';
+import ProductTableWishlist from '../Tables/ProductTableWishlist';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 
-
-import {data} from '../data/Data.js';
+import {dataWishlist} from '../data/DataWishlist.js';
 
 /**stateful component */
-export default class Content extends React.Component {
+export default class ContentWishlist extends React.Component {
 
   constructor(props) {
     super(props);
@@ -19,7 +18,8 @@ export default class Content extends React.Component {
 
     return (
       <div className="col-lg-9">
-        <ProductTable data={data}/>
+        
+        <ProductTableWishlist data={dataWishlist}/>
       </div>
 
 

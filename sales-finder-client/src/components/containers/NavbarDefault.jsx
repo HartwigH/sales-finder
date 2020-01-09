@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, NavLink, Route, Switch } from 'react-router-dom';
 
 /**stateful component */
 export default class NavbarDefault extends React.Component {
@@ -21,15 +21,15 @@ export default class NavbarDefault extends React.Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item active">
-                                <Link className="nav-link" to="/deals/all">Deals</Link>                                
+                            <li className="nav-item ">
+                                <NavLink activeClassName="active" className="nav-link" to="/deals/all">Deals</NavLink>                                
                             </li>
                             <li className="nav-item">
-                            <Link className="nav-link" to="/register">Register </Link>
+                            <NavLink activeClassName="active" className="nav-link" to="/register">Register </NavLink>
                                 
                             </li>
                         </ul>
-                        <Link className="btn btn-outline-primary" to="/sign-in">Sign In <i class="fas fa-sign-in-alt"></i></Link>
+                        <NavLink activeClassName="active" className="btn btn-outline-primary" to="/sign-in">Sign In <i class="fas fa-sign-in-alt"></i></NavLink>
                     </div>
                 </div>
             </nav>
