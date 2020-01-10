@@ -19,7 +19,7 @@ export default class ContentBaltman extends React.Component {
         <div className="col-lg-9">
 
           <div className="mh-100" style={{'padding-top': "250px", 'padding-bottom': "250px", color: "#adb5bd"}}>  
-          <h1 className="text-center align-middle">Coming soon <i class="fas fa-tools"></i></h1>
+          <h1 className="text-center align-middle">Coming soon <i className="fas fa-tools"></i></h1>
           </div>
           
         </div>

@@ -8,152 +8,190 @@ import 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.c
 
 import paginationFactory, { PaginationProvider, PaginationListStandalone, SizePerPageDropdownStandalone } from 'react-bootstrap-table2-paginator';
 
+import ProductModal from '../widgets/ProductModal.jsx';
 
 //import {data} from '../data/Data.js';
 
 import './ProductTable.css';
 
-const { SearchBar } = Search;
 
-//custom search
-const TableSearchBar = (props) => {
-  let input;
-  const handleChange = () => {
-    props.onSearch(input.value); //eslint-disable-line
-  };
-  return (
-    <div className="form-label-group">
-      <span className="fa fa-search form-control-feedback"></span>
-      <input
-        id="table-search-bar"
-        className="form-control form-control-sm"
-        ref={n => input = n} //eslint-disable-line
-        type="text"
-        placeholder="Search..."
-        onChange={handleChange}
-      />
-      <label htmlFor="table-search-bar">Search...</label>
-
-    </div>
-  );
-};
-
-// handle url
-const imageFormatter = (cell, row) => {
-  let imgUrl = React.createElement('img', {
-    src: row.url,
-    id: 'product-img'
-  });
-  return imgUrl;
-}
-
-const productDetails = (e) => {
-  //console.log(e.target);
-  var { id } = e.target;
-  console.log("See Details for Id: " + id);
-  //hashHistory.push('/contacts/details/'+id);
-}
-
-const formatProductDetailsButtonCell = (cell, row) => {
-  let clickHandler = productDetails;
-  var emptyContent = React.createElement('i', { id: row.id, onClick: clickHandler });
-  var addBtn = React.createElement('a', { id: row.id, className: "fas fa-cart-plus fa-lg text-success action-style", onClick: clickHandler }, emptyContent);
-  var logBtn = React.createElement('a', { id: row.id, className: "fas fa-search-dollar fa-lg text-info action-style", onClick: clickHandler }, emptyContent);
-  var goBtn = React.createElement('a', { id: row.id, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickHandler }, emptyContent);
-  const container = React.createElement('div', {}, [addBtn, logBtn, goBtn]);
-  return container;
-}
-
-const columns = [{
-  dataField: 'url',
-  text: 'Image',
-  formatter: imageFormatter
-}, {
-  dataField: 'product',
-  text: 'Name',
-  sort: true,
-  sortCaret: (order, column) => {
-    if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
-    else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-up"></i></span>);
-    else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-down-alt"></i></span>);
-    return null;
-  }
-}, {
-  dataField: 'price',
-  text: 'Price',
-  sort: true,
-  sortCaret: (order, column) => {
-    if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
-    else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up"></i></span>);
-    else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down-alt"></i></span>);
-    return null;
-  }
-}, {
-  dataField: 'precentage',
-  text: 'Save',
-  sort: true,
-  sortCaret: (order, column) => {
-    if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
-    else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down"></i></span>);
-    else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up-alt"></i></span>);
-    return null;
-  }
-}, {
-  dataField: '',
-  text: 'Action',
-  formatter: formatProductDetailsButtonCell
-}];
-
-const customTotal = (from, to, size) => (
-  <span className="react-bootstrap-table-pagination-total">
-    Showing {from} to {to} of {size} Results
-    </span>
-);
-
-const pageButtonRenderer = ({
-  page,
-  active,
-  disable,
-  title,
-  onPageChange
-}) => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    onPageChange(page);
-  };
-  const activeStyle = {};
-  if (active) {
-    activeStyle.backgroundColor = '#17a2b8';
-    activeStyle.color = 'white';
-  } else {
-    activeStyle.backgroundColor = 'white';
-    activeStyle.color = '#17a2b8';
-  }
-  if (typeof page === 'string') {
-    activeStyle.backgroundColor = 'white';
-    activeStyle.color = '#17a2b8';
-  }
-  return (
-    <li className="page-item">
-      <a href="#" onClick={handleClick} style={activeStyle}>{page}</a>
-    </li>
-  );
-};
-
-const paginationConfig = {
-  custom: true,
-  pageButtonRenderer
-};
 
 
 /**stateful component */
 export default class ProductTable extends React.Component {
 
+
+
+
   constructor(props) {
     super(props);
+    this.state = {
+      isShowing: false,
+      selectId: 0
+    }
   }
 
+  openModalHandler = () => {
+    this.setState({
+      isShowing: true
+    });
+  }
+
+  closeModalHandler = () => {
+    this.setState({
+      isShowing: false
+    });
+  }
+
+
   render() {
+    //custom search
+    const TableSearchBar = (props) => {
+      let input;
+      const handleChange = () => {
+        props.onSearch(input.value); //eslint-disable-line
+      };
+      return (
+        <div className="form-label-group">
+          <span className="fa fa-search form-control-feedback"></span>
+          <input
+            id="table-search-bar"
+            className="form-control form-control-sm"
+            ref={n => input = n} //eslint-disable-line
+            type="text"
+            placeholder="Search..."
+            onChange={handleChange}
+          />
+          <label htmlFor="table-search-bar">Search...</label>
+
+        </div>
+      );
+    };
+
+    // handle url
+    const imageFormatter = (cell, row) => {
+      let imgUrl = React.createElement('img', {
+        src: row.url,
+        id: 'product-img'
+      });
+      return imgUrl;
+    }
+
+    const addProductToWishlist = (e) => {
+      var { id } = e.target;
+      console.log("Adding to wishlist: " + id);
+    }
+
+
+    let productId = 0;
+    const seeProductHistory = (e) => {
+      var { id } = e.target;
+      productId = id;
+      this.setState({
+        selectId: productId
+      });
+      console.log("I am sending id = " + productId);
+    }
+
+    const goToProduct = (e) => {
+      var { id } = e.target;
+      //window.open(id, '_blank'); <- uncomment when with real data
+      window.open('https://www.google.com', '_blank');
+    }
+
+    const formatProductDetailsButtonCell = (cell, row) => {
+      let clickHandler = addProductToWishlist;
+      let clickInfo = seeProductHistory;
+      let clickToUrl = goToProduct;
+      var emptyContent = React.createElement('i', { id: row.id, onClick: clickHandler });
+      var addBtn = React.createElement('a', { id: row.id, className: "fas fa-cart-plus fa-lg text-success action-style", onClick: clickHandler, title: "Add to wishlist" }, emptyContent);
+      var logBtn = React.createElement('a', { id: row.id, className: "fas fa-search-dollar fa-lg text-info action-style", 'data-toggle': "modal", 'data-target': "#exampleModalCenter", onClick: clickInfo }, emptyContent);
+      var goBtn = React.createElement('a', { id: row.url, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickToUrl, title: "See product in store" }, emptyContent);
+      const container = React.createElement('div', {}, [addBtn, logBtn, goBtn]);
+      return container;
+    }
+
+    const columns = [{
+      dataField: 'url',
+      text: 'Image',
+      formatter: imageFormatter
+    }, {
+      dataField: 'product',
+      text: 'Name',
+      sort: true,
+      sortCaret: (order, column) => {
+        if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
+        else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-up"></i></span>);
+        else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-down-alt"></i></span>);
+        return null;
+      }
+    }, {
+      dataField: 'price',
+      text: 'Price',
+      sort: true,
+      sortCaret: (order, column) => {
+        if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
+        else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up"></i></span>);
+        else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down-alt"></i></span>);
+        return null;
+      }
+    }, {
+      dataField: 'precentage',
+      text: 'Save',
+      sort: true,
+      sortCaret: (order, column) => {
+        if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
+        else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down"></i></span>);
+        else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up-alt"></i></span>);
+        return null;
+      }
+    }, {
+      dataField: '',
+      text: 'Action',
+      formatter: formatProductDetailsButtonCell
+    }];
+
+    const customTotal = (from, to, size) => (
+      <span className="react-bootstrap-table-pagination-total">
+        Showing {from} to {to} of {size} Results
+    </span>
+    );
+
+    const pageButtonRenderer = ({
+      page,
+      active,
+      disable,
+      title,
+      onPageChange
+    }) => {
+      const handleClick = (e) => {
+        e.preventDefault();
+        onPageChange(page);
+      };
+      const activeStyle = {};
+      if (active) {
+        activeStyle.backgroundColor = '#17a2b8';
+        activeStyle.color = 'white';
+      } else {
+        activeStyle.backgroundColor = 'white';
+        activeStyle.color = '#17a2b8';
+      }
+      if (typeof page === 'string') {
+        activeStyle.backgroundColor = 'white';
+        activeStyle.color = '#17a2b8';
+      }
+      return (
+        <li className="page-item">
+          <a href="#" onClick={handleClick} style={activeStyle}>{page}</a>
+        </li>
+      );
+    };
+
+    const paginationConfig = {
+      custom: true,
+      pageButtonRenderer
+    };
+
     const data = this.props.data;
     const contentTable = ({ paginationProps, paginationTableProps }) => {
 
@@ -194,6 +232,14 @@ export default class ProductTable extends React.Component {
 
           <SizePerPageDropdownStandalone {...paginationProps} />
           <PaginationListStandalone {...paginationProps} />
+
+          {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null}
+
+          <ProductModal data={data} productId={this.state.selectId}
+            className="modal"
+            show={this.state.isShowing}
+            close={this.closeModalHandler}>
+          </ProductModal>
         </div>
       );
     }
@@ -204,6 +250,7 @@ export default class ProductTable extends React.Component {
         <PaginationProvider pagination={paginationFactory(paginationConfig)} >
           {contentTable}
         </PaginationProvider >
+
       </div>
     );
   }

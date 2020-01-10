@@ -40,7 +40,7 @@ export default class MasterLayout extends React.Component {
 
             <ShowNavbar isLoggedIn={isLoggedIn} />
 
-            <div className="row" style={{'min-height':"556px"}}>
+            <div className="row" style={{'minHeight':"556px"}}>
 
                 <Switch>
                     <Route exact path="/" component={Home} />
