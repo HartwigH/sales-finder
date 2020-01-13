@@ -99,20 +99,48 @@ export default class ProductTable extends React.Component {
       window.open('https://www.google.com', '_blank');
     }
 
-    const precentageFormatter = (cell, row) => {
-      if(row.precentage < 20) {
-        return (
-          <span>
-            <strong style={ { color: '#dc3545' } }>{ cell }%</strong>
-          </span>
-        );
-      } else {
-        return (
-          <span>
-            <strong style={ { color: '#28a745' } }>{ cell }%</strong>
-          </span>
-        );
+    function perc2color(perc,min,max) {
+      var base = (max - min);
+
+      if (base == 0) { perc = 100; }
+      else {
+          perc = (perc - min) / base * 100; 
       }
+      var r, g, b = 0;
+      if (perc < 50) {
+          r = 255;
+          g = Math.round(5.1 * perc);
+      }
+      else {
+          g = 255;
+          r = Math.round(510 - 5.10 * perc);
+      }
+      var h = r * 0x10000 + g * 0x100 + b * 0x1;
+      
+      return '#' + ('000000' + h.toString(16)).slice(-6);
+  }
+
+  function getPrecentageMax(data) {
+    let precentageArr = [];
+    for (let i = 0; i < data.length; i++) {
+      precentageArr.push(data[i].precentage);
+    }
+    return Math.max(...precentageArr);
+  }
+
+  function getPrecentageMin(data) {
+    let precentageArr = [];
+    for (let i = 0; i < data.length; i++) {
+      precentageArr.push(data[i].precentage);
+    }
+    return Math.min(...precentageArr);
+  }
+    const precentageFormatter = (cell, row) => {
+        return (
+          <span style={ { color: perc2color(row.precentage, getPrecentageMin(data), getPrecentageMax(data)),  'text-shadow': '1px 1px 1px #7A7A7A' } }>
+            { cell }%
+          </span>
+        );
     }
 
     const formatProductDetailsButtonCell = (cell, row) => {
@@ -120,7 +148,7 @@ export default class ProductTable extends React.Component {
       let clickInfo = seeProductHistory;
       let clickToUrl = goToProduct;
       var emptyContent = React.createElement('i', { id: row.id, onClick: clickHandler });
-      var addBtn = React.createElement('a', { id: row.id, className: "fas fa-cart-plus fa-lg text-success action-style", onClick: clickHandler, title: "Add to wishlist" }, emptyContent);
+      var addBtn = React.createElement('a', { id: row.id, className: "far fa-star fa-lg text-warning action-style", onClick: clickHandler, title: "Add to wishlist" }, emptyContent);
       var logBtn = React.createElement('a', { id: row.id, className: "fas fa-search-dollar fa-lg text-info action-style", 'data-toggle': "modal", 'data-target': "#exampleModalCenter", onClick: clickInfo }, emptyContent);
       var goBtn = React.createElement('a', { id: row.url, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickToUrl, title: "See product in store" }, emptyContent);
       const container = React.createElement('div', {}, [addBtn, logBtn, goBtn]);
