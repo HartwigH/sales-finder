@@ -99,6 +99,22 @@ export default class ProductTable extends React.Component {
       window.open('https://www.google.com', '_blank');
     }
 
+    const precentageFormatter = (cell, row) => {
+      if(row.precentage < 20) {
+        return (
+          <span>
+            <strong style={ { color: '#dc3545' } }>{ cell }%</strong>
+          </span>
+        );
+      } else {
+        return (
+          <span>
+            <strong style={ { color: '#28a745' } }>{ cell }%</strong>
+          </span>
+        );
+      }
+    }
+
     const formatProductDetailsButtonCell = (cell, row) => {
       let clickHandler = addProductToWishlist;
       let clickInfo = seeProductHistory;
@@ -143,8 +159,9 @@ export default class ProductTable extends React.Component {
         if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
         else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down"></i></span>);
         else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up-alt"></i></span>);
-        return null;
-      }
+        return null;      
+      },
+      formatter: precentageFormatter
     }, {
       dataField: '',
       text: 'Action',
@@ -233,8 +250,7 @@ export default class ProductTable extends React.Component {
           <SizePerPageDropdownStandalone {...paginationProps} />
           <PaginationListStandalone {...paginationProps} />
 
-          {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null}
-
+          
           <ProductModal data={data} productId={this.state.selectId}
             className="modal"
             show={this.state.isShowing}

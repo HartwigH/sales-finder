@@ -114,6 +114,12 @@
 }
 
 .action-style {
-    padding-right: 0.8rem;
-    padding-bottom: 1rem;
+    margin-right: 0.8rem;
+    margin-bottom: 1rem;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.react-bootstrap-table div > a:hover {
+    cursor: pointer;
 }
