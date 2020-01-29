@@ -6,7 +6,6 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 
 import {dataMosaic} from '../data/DataMosaic.js';
-import { dataMonton } from '../data/DataMonton.js';
 
 /**stateful component */
 export default class ContentMosaic extends React.Component {

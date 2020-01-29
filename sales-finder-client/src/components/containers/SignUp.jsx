@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const axios = require("axios"); //external library  https://github.com/axios/axios
 let httpsProxyAgent = require('https-proxy-agent');

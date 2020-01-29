@@ -1,10 +1,7 @@
 import React from 'react';
 
-import ProductTable from '../Tables/ProductTable.jsx';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
-import {dataMosaic} from '../data/DataMosaic.js';
-import { dataMonton } from '../data/DataMonton.js';
 
 /**stateful component */
 export default class ContentHM extends React.Component {

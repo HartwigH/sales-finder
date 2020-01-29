@@ -1,4 +1,3 @@
-/** find relevant element class and override some props to fit to your page requirements  (try within/without)*/ 
 .react-bs-table-sizePerPage-dropdown {
     margin-left: 15px;
     margin-right: 15px;
@@ -30,11 +29,6 @@
     }
   
   }
-
-.table > thead {
-    /*background-color: #17a2b8;
-    color: white;*/
-}
 
 .table > thead > tr > th {
     border: none;

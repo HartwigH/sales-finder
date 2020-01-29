@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './InnerMenuSettings.css';
 /**stateful component */
 export default class InnerMenuSettings extends React.Component {

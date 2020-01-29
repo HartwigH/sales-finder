@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, Route, Switch } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 /**stateful component */
 export default class NavbarDefault extends React.Component {

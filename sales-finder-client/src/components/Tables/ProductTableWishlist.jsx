@@ -12,11 +12,11 @@ import './ProductTableWishlist.css';
 
 const { SearchBar } = Search;
 
-//custom search
+//Might use in future
 const TableSearchBar = (props) => {
   let input;
   const handleChange = () => {
-    props.onSearch(input.value); //eslint-disable-line
+    props.onSearch(input.value); 
   };
   return (
     <div className="form-label-group">
@@ -24,7 +24,7 @@ const TableSearchBar = (props) => {
       <input
         id="table-search-bar"
         className="form-control form-control-sm"
-        ref={n => input = n} //eslint-disable-line
+        ref={n => input = n} 
         type="text"
         placeholder="Search..."
         onChange={handleChange}
@@ -46,10 +46,8 @@ const imageFormatter = (cell, row) => {
 }
 
 const productDetails = (e) => {
-  //console.log(e.target);
   var { id } = e.target;
   console.log("See Details for Id: " + id);
-  //hashHistory.push('/contacts/details/'+id);
 }
 
 const formatProductDetailsButtonCell = (cell, row) => {
@@ -103,12 +101,6 @@ const columns = [{
   formatter: formatProductDetailsButtonCell
 }];
 
-const customTotal = (from, to, size) => (
-  <span className="react-bootstrap-table-pagination-total">
-    Showing {from} to {to} of {size} Results
-    </span>
-);
-
 const pageButtonRenderer = ({
   page,
   active,
@@ -142,8 +134,6 @@ const pageButtonRenderer = ({
 const paginationConfig = {
   custom: true,
   pageButtonRenderer
-
-  // A numeric array is also available. the purpose of above example is custom the text
 };
 
 
@@ -155,8 +145,6 @@ export default class ProductTableWishlist extends React.Component {
     super(props);
 
   }
-
-
 
   render() {
     const data = this.props.data;
@@ -176,16 +164,12 @@ export default class ProductTableWishlist extends React.Component {
 
                 return (
                   <div>
-
-
                     <BootstrapTable
                       {...toolkitprops.baseProps}
                       {...paginationTableProps}
                       bordered={false}
                     />
-
                   </div>);
-
 
               }
             }

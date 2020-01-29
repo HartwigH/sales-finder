@@ -15,7 +15,7 @@ import ContentWishlist from '../containers/ContentWishlist.jsx';
 import Home from '../containers/Home.jsx';
 import InnerMenuSettings from '../containers/InnerMenuSettings.jsx';
 
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 function ShowNavbar(props) {
     const isLoggedIn = props.isLoggedIn;

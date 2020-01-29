@@ -3,25 +3,19 @@ import React from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
-import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
+import ToolkitProvider from 'react-bootstrap-table2-toolkit';
 import 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css';
 
 import paginationFactory, { PaginationProvider, PaginationListStandalone, SizePerPageDropdownStandalone } from 'react-bootstrap-table2-paginator';
 
 import ProductModal from '../widgets/ProductModal.jsx';
 
-//import {data} from '../data/Data.js';
-
 import './ProductTable.css';
-
 
 
 
 /**stateful component */
 export default class ProductTable extends React.Component {
-
-
-
 
   constructor(props) {
     super(props);
@@ -49,7 +43,7 @@ export default class ProductTable extends React.Component {
     const TableSearchBar = (props) => {
       let input;
       const handleChange = () => {
-        props.onSearch(input.value); //eslint-disable-line
+        props.onSearch(input.value);
       };
       return (
         <div className="form-label-group">
@@ -57,7 +51,7 @@ export default class ProductTable extends React.Component {
           <input
             id="table-search-bar"
             className="form-control form-control-sm"
-            ref={n => input = n} //eslint-disable-line
+            ref={n => input = n} 
             type="text"
             placeholder="Search..."
             onChange={handleChange}
@@ -94,17 +88,16 @@ export default class ProductTable extends React.Component {
     }
 
     const goToProduct = (e) => {
-      var { id } = e.target;
-      //window.open(id, '_blank'); <- uncomment when with real data
+      //window.open(id, '_blank'); <- uncomment when using real data
       window.open('https://www.google.com', '_blank');
     }
 
-    const precentageFormatter = (cell, row) => {
-        return (
-          <span>
-            { cell }%
+    const precentageFormatter = (cell) => {
+      return (
+        <span>
+          {cell}%
           </span>
-        );
+      );
     }
 
     const formatProductDetailsButtonCell = (cell, row) => {
@@ -127,7 +120,7 @@ export default class ProductTable extends React.Component {
       dataField: 'product',
       text: 'Name',
       sort: true,
-      sortCaret: (order, column) => {
+      sortCaret: (order) => {
         if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
         else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-up"></i></span>);
         else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-alpha-down-alt"></i></span>);
@@ -137,7 +130,7 @@ export default class ProductTable extends React.Component {
       dataField: 'price',
       text: 'Price',
       sort: true,
-      sortCaret: (order, column) => {
+      sortCaret: (order) => {
         if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
         else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up"></i></span>);
         else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down-alt"></i></span>);
@@ -147,11 +140,11 @@ export default class ProductTable extends React.Component {
       dataField: 'precentage',
       text: 'Save',
       sort: true,
-      sortCaret: (order, column) => {
+      sortCaret: (order) => {
         if (!order) return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort"></i></span>);
         else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down"></i></span>);
         else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up-alt"></i></span>);
-        return null;      
+        return null;
       },
       formatter: precentageFormatter
     }, {
@@ -160,17 +153,10 @@ export default class ProductTable extends React.Component {
       formatter: formatProductDetailsButtonCell
     }];
 
-    const customTotal = (from, to, size) => (
-      <span className="react-bootstrap-table-pagination-total">
-        Showing {from} to {to} of {size} Results
-    </span>
-    );
 
     const pageButtonRenderer = ({
       page,
       active,
-      disable,
-      title,
       onPageChange
     }) => {
       const handleClick = (e) => {
@@ -242,7 +228,7 @@ export default class ProductTable extends React.Component {
           <SizePerPageDropdownStandalone {...paginationProps} />
           <PaginationListStandalone {...paginationProps} />
 
-          
+
           <ProductModal data={data} productId={this.state.selectId}
             className="modal"
             show={this.state.isShowing}
