@@ -12,7 +12,63 @@ import ProductModal from '../widgets/ProductModal.jsx';
 
 import './ProductTable.css';
 
+//custom search
+const TableSearchBar = (props) => {
+  let input;
+  const handleChange = () => {
+    props.onSearch(input.value);
+  };
+  return (
+    <div className="form-label-group">
+      <span className="fa fa-search form-control-feedback"></span>
+      <input
+        id="table-search-bar"
+        className="form-control form-control-sm"
+        ref={n => input = n}
+        type="text"
+        placeholder="Search..."
+        onChange={handleChange}
+      />
+      <label htmlFor="table-search-bar">Search...</label>
 
+    </div>
+  );
+};
+
+// handle url
+const imageFormatter = (cell, row) => {
+  let imgUrl = React.createElement('img', {
+    src: row.productImgUrl,
+    id: 'product-img'
+  });
+  return imgUrl;
+}
+
+const addProductToWishlist = (e) => {
+  var { id } = e.target;
+  console.log("Adding to wishlist: " + id);
+}
+
+const goToProduct = (e) => {
+  var { id } = e.target;
+  window.open(id, '_blank');
+}
+
+const precentageFormatter = (cell) => {
+  return (
+    <span>
+      {cell}%
+          </span>
+  );
+}
+
+const priceFormatter = (cell) => {
+  return (
+    <span>
+      {cell} €
+        </span>
+  )
+}
 
 /**stateful component */
 export default class ProductTable extends React.Component {
@@ -37,45 +93,8 @@ export default class ProductTable extends React.Component {
     });
   }
 
-
+  //-------------RENDER--------------------
   render() {
-    //custom search
-    const TableSearchBar = (props) => {
-      let input;
-      const handleChange = () => {
-        props.onSearch(input.value);
-      };
-      return (
-        <div className="form-label-group">
-          <span className="fa fa-search form-control-feedback"></span>
-          <input
-            id="table-search-bar"
-            className="form-control form-control-sm"
-            ref={n => input = n} 
-            type="text"
-            placeholder="Search..."
-            onChange={handleChange}
-          />
-          <label htmlFor="table-search-bar">Search...</label>
-
-        </div>
-      );
-    };
-
-    // handle url
-    const imageFormatter = (cell, row) => {
-      let imgUrl = React.createElement('img', {
-        src: row.url,
-        id: 'product-img'
-      });
-      return imgUrl;
-    }
-
-    const addProductToWishlist = (e) => {
-      var { id } = e.target;
-      console.log("Adding to wishlist: " + id);
-    }
-
 
     let productId = 0;
     const seeProductHistory = (e) => {
@@ -87,18 +106,6 @@ export default class ProductTable extends React.Component {
       console.log("I am sending id = " + productId);
     }
 
-    const goToProduct = (e) => {
-      //window.open(id, '_blank'); <- uncomment when using real data
-      window.open('https://www.google.com', '_blank');
-    }
-
-    const precentageFormatter = (cell) => {
-      return (
-        <span>
-          {cell}%
-          </span>
-      );
-    }
 
     const formatProductDetailsButtonCell = (cell, row) => {
       let clickHandler = addProductToWishlist;
@@ -107,17 +114,17 @@ export default class ProductTable extends React.Component {
       var emptyContent = React.createElement('i', { id: row.id, onClick: clickHandler });
       var addBtn = React.createElement('a', { id: row.id, className: "far fa-star fa-lg text-warning action-style", onClick: clickHandler, title: "Add to wishlist" }, emptyContent);
       var logBtn = React.createElement('a', { id: row.id, className: "fas fa-search-dollar fa-lg text-info action-style", 'data-toggle': "modal", 'data-target': "#exampleModalCenter", onClick: clickInfo }, emptyContent);
-      var goBtn = React.createElement('a', { id: row.url, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickToUrl, title: "See product in store" }, emptyContent);
+      var goBtn = React.createElement('a', { id: row.productUrl, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickToUrl, title: "See product in store" }, emptyContent);
       const container = React.createElement('div', {}, [addBtn, logBtn, goBtn]);
       return container;
     }
 
     const columns = [{
-      dataField: 'url',
+      dataField: 'productImgUrl',
       text: 'Image',
       formatter: imageFormatter
     }, {
-      dataField: 'product',
+      dataField: 'name',
       text: 'Name',
       sort: true,
       sortCaret: (order) => {
@@ -127,7 +134,7 @@ export default class ProductTable extends React.Component {
         return null;
       }
     }, {
-      dataField: 'price',
+      dataField: 'price[0].price',
       text: 'Price',
       sort: true,
       sortCaret: (order) => {
@@ -135,9 +142,10 @@ export default class ProductTable extends React.Component {
         else if (order === 'asc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-up"></i></span>);
         else if (order === 'desc') return (<span className="sort-caret">&nbsp;&nbsp;<i className="fas fa-sort-numeric-down-alt"></i></span>);
         return null;
-      }
+      },
+      formatter: priceFormatter
     }, {
-      dataField: 'precentage',
+      dataField: '',
       text: 'Save',
       sort: true,
       sortCaret: (order) => {
@@ -187,7 +195,11 @@ export default class ProductTable extends React.Component {
       pageButtonRenderer
     };
 
+
     const data = this.props.data;
+
+    //-----------RETURN----------------
+
     const contentTable = ({ paginationProps, paginationTableProps }) => {
 
       return (
@@ -229,11 +241,11 @@ export default class ProductTable extends React.Component {
           <PaginationListStandalone {...paginationProps} />
 
 
-          <ProductModal data={data} productId={this.state.selectId}
+          {<ProductModal data={data} productId={this.state.selectId}
             className="modal"
             show={this.state.isShowing}
             close={this.closeModalHandler}>
-          </ProductModal>
+          </ProductModal>}
         </div>
       );
     }

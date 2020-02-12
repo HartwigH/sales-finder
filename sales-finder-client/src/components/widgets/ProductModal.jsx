@@ -8,29 +8,36 @@ export default class ProductModal extends React.Component {
         super(props);
     }
 
+
     render() {
 
-        const data = this.props.data;
         const productId = this.props.productId;
+        const data = this.props.data;
+
+        console.log('current id is ', productId);
 
         function filterId(data, productId) {
-            let id = 0;
+            
             for (let i = 0; i < data.length; i++) {
-                if(productId == data[i].id) {
-                    id = i;
-                }
+                if(productId == 0) {
+                    return data[0];
+                } else if(productId == data[i].id) {
+                    return data[i];
+                } 
             }
-            return id;
+            return null;
         }
 
-        let correctId = filterId(data, productId);
+        let foundData = filterId(data, productId);
+
+        console.log(foundData);
 
         return (
             <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style={{display: "none"}}>
                 <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLongTitle">{data[correctId].product}</h5>
+                            <h5 className="modal-title" id="exampleModalLongTitle">{foundData.name}</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
@@ -38,7 +45,7 @@ export default class ProductModal extends React.Component {
                         <div className="modal-body">
                             <div className="row">
                                 <div className="col-3">
-                                    <a href="#"><img src={data[correctId].url} alt="Monton hooded top" className="active" height="290" /></a>
+                                    <a href="#"><img src={foundData.productImgUrl} alt="Monton hooded top" className="active" height="290" /></a>
                                 </div>
                                 <div className="col-9">
                                     <div className="card-header">
@@ -52,7 +59,7 @@ export default class ProductModal extends React.Component {
                                 </div>
                                 <div className="col-12">
                                     <hr />
-                                    <p className="text-center align-middle">Product starting price: <b className="text-danger">€55.00</b> - Product price now: <b className="text-success">{data[correctId].price}</b> - Total % drop: <b className="text-success">{data[correctId].precentage}</b></p>
+                                    <p className="text-center align-middle">Product starting price: {foundData.price[0].price} - Product price now: {foundData.price[0].price}<b className="text-success"></b> - Total % drop: <b className="text-success"></b></p>
                                 </div>
                             </div>
                         </div>
