@@ -58,7 +58,7 @@ const precentageFormatter = (cell) => {
   return (
     <span>
       {cell}%
-          </span>
+    </span>
   );
 }
 
@@ -66,9 +66,12 @@ const priceFormatter = (cell) => {
   return (
     <span>
       {cell} €
-        </span>
+    </span>
   )
 }
+
+
+
 
 /**stateful component */
 export default class ProductTable extends React.Component {
@@ -95,6 +98,15 @@ export default class ProductTable extends React.Component {
 
   //-------------RENDER--------------------
   render() {
+
+    const data = this.props.data;
+
+    function priceFilter(recivedData) {
+      let lastArrElement = recivedData[0].price.length - 1;
+      let x = 'price[' + String(lastArrElement) + '].price';
+      console.log('My val is ', x);
+      return x;
+    }
 
     let productId = 0;
     const seeProductHistory = (e) => {
@@ -134,7 +146,7 @@ export default class ProductTable extends React.Component {
         return null;
       }
     }, {
-      dataField: 'price[0].price',
+      dataField: priceFilter(data),
       text: 'Price',
       sort: true,
       sortCaret: (order) => {
@@ -196,7 +208,7 @@ export default class ProductTable extends React.Component {
     };
 
 
-    const data = this.props.data;
+
 
     //-----------RETURN----------------
 
