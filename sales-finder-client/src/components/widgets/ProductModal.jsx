@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Chart from "chart.js";
 
 /**stateful component */
 export default class ProductModal extends React.Component {
