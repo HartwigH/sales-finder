@@ -47,8 +47,6 @@ export default class ProductModal extends React.Component {
             ],            
         }
 
-        let calculateSavePrecentage = (((foundData.price[0].price - foundData.price[(foundData.price.length -1)].price) 
-        * 100) / foundData.price[0].price);
 
 
         return (
@@ -64,7 +62,7 @@ export default class ProductModal extends React.Component {
                         <div className="modal-body">
                             <div className="row">
                                 <div className="col-3">
-                                    <a href="#"><img src={foundData.productImgUrl} alt="Monton hooded top" className="active" height="290" /></a>
+                                    <a href="#"><img src={foundData.imgUrl} alt="Monton hooded top" className="active" height="290" /></a>
                                 </div>
                                 <div className="col-9">
                                     <div className="card-body">
@@ -78,7 +76,7 @@ export default class ProductModal extends React.Component {
                                 </div>
                                 <div className="col-12">
                                     <hr />
-                                    <p className="text-center align-middle">Product starting price: {foundData.price[0].price} - Product price now: {foundData.price[(foundData.price.length -1)].price}<b className="text-success"></b> - Total save: {calculateSavePrecentage} %<b className="text-success"></b></p>
+                                    <p className="text-center align-middle">Product starting price: {foundData.price[0].price} € - Product price now: {foundData.lastPrice} €<b className="text-success"></b> - Total save: {foundData.percentageDrop} %<b className="text-success"></b></p>
                                 </div>
                             </div>
                         </div>

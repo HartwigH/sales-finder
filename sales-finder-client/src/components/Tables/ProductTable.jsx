@@ -35,23 +35,9 @@ const TableSearchBar = (props) => {
   );
 };
 
-// handle url
-const imageFormatter = (cell, row) => {
-  let imgUrl = React.createElement('img', {
-    src: row.productImgUrl,
-    id: 'product-img'
-  });
-  return imgUrl;
-}
-
 const addProductToWishlist = (e) => {
   var { id } = e.target;
   console.log("Adding to wishlist: " + id);
-}
-
-const goToProduct = (e) => {
-  var { id } = e.target;
-  window.open(id, '_blank');
 }
 
 const precentageFormatter = (cell) => {
@@ -101,11 +87,18 @@ export default class ProductTable extends React.Component {
 
     const data = this.props.data;
 
-    function priceFilter(recivedData) {
-      let lastArrElement = recivedData[0].price.length - 1;
-      let x = 'price[' + String(lastArrElement) + '].price';
-      console.log('My val is ', x);
-      return x;
+    const goToProduct = (e) => {
+      var { id } = e.target;
+      window.open(id, '_blank');
+    }
+
+    // handle url
+    const imageFormatter = (cell, row) => {
+      let imgUrl = React.createElement('img', {
+        src: row.imgUrl,
+        id: 'product-img'
+      });
+      return imgUrl;
     }
 
     let productId = 0;
@@ -126,13 +119,13 @@ export default class ProductTable extends React.Component {
       var emptyContent = React.createElement('i', { id: row.id, onClick: clickHandler });
       var addBtn = React.createElement('a', { id: row.id, className: "far fa-star fa-lg text-warning action-style", onClick: clickHandler, title: "Add to wishlist" }, emptyContent);
       var logBtn = React.createElement('a', { id: row.id, className: "fas fa-search-dollar fa-lg text-info action-style", 'data-toggle': "modal", 'data-target': "#exampleModalCenter", onClick: clickInfo }, emptyContent);
-      var goBtn = React.createElement('a', { id: row.productUrl, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickToUrl, title: "See product in store" }, emptyContent);
+      var goBtn = React.createElement('a', { id: row.url, className: "fas fa-chevron-circle-right fa-lg text-primary action-style", onClick: clickToUrl, title: "See product in store" }, emptyContent);
       const container = React.createElement('div', {}, [addBtn, logBtn, goBtn]);
       return container;
     }
 
     const columns = [{
-      dataField: 'productImgUrl',
+      dataField: 'imgUrl',
       text: 'Image',
       formatter: imageFormatter
     }, {
@@ -146,7 +139,7 @@ export default class ProductTable extends React.Component {
         return null;
       }
     }, {
-      dataField: priceFilter(data),
+      dataField: 'lastPrice',
       text: 'Price',
       sort: true,
       sortCaret: (order) => {
@@ -157,7 +150,7 @@ export default class ProductTable extends React.Component {
       },
       formatter: priceFormatter
     }, {
-      dataField: '',
+      dataField: 'percentageDrop',
       text: 'Save',
       sort: true,
       sortCaret: (order) => {
